@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class QuizService {
-
-  constructor() { }
+  // We’ll add question fetching later
 }
