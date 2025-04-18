@@ -1,0 +1,47 @@
+// src/app/components/home/home.component.scss
+.section {
+  background-color: #1a3c34;
+  min-height: 100vh;
+  padding: 2rem 0;
+}
+
+.quiz-form {
+  background-color: #2e2e2e;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+
+  .form-label {
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-control {
+    background-color: #3e3e3e;
+    border: 1px solid #28b463;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 5px;
+    width: 100%;
+  }
+}
+
+.form-btn {
+  text-align: center;
+
+  .submit-btn {
+    background-color: #28b463;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+
+    &:hover {
+      background-color: #3cc77f;
+    }
+  }
+}

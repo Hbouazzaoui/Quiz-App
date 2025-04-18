@@ -1,1 +1,40 @@
-<p>home works!</p>
+<!-- src/app/components/home/home.component.html -->
+<app-navbar></app-navbar>
+<div class="section">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="quiz-form">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <span class="form-label">Difficulty</span>
+                <select class="form-control" [(ngModel)]="difficulty" name="difficulty">
+                  <option value="easy">Easy</option>
+                  <option value="medium">Medium</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="form-group">
+                <span class="form-label">Questions</span>
+                <select class="form-control" [(ngModel)]="questionCount" name="questionCount">
+                  <option value="5">5</option>
+                  <option value="10">10</option>
+                  <option value="15">15</option>
+                  <option value="20">20</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-btn">
+            <button class="submit-btn" (click)="startQuiz()">Start Quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
