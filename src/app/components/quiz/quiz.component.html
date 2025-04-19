@@ -1,7 +1,43 @@
+<!-- src/app/components/quiz/quiz.component.html -->
 <app-navbar></app-navbar>
 <div class="section">
   <div class="container">
-    <h2>Quiz Page</h2>
-    <p>Questions will appear here soon!</p>
+    <div class="row justify-content-md-center">
+      <div class="col-md-6">
+        <div class="quiz-header">
+          <div class="progress-bar">
+            <span>{{ currentQuestionIndex + 1 }} / {{ questions.length }}</span>
+            <div class="progress-fill" [style.width]="((currentQuestionIndex + 1) / questions.length) * 100 + '%'"></div>
+          </div>
+          <div class="timer" [ngClass]="{'warning': timer <= 10}">{{ timer }}</div>
+        </div>
+        <div class="quiz-card" *ngIf="questions.length > 0">
+          <p *ngIf="questions.length < expectedAmount" class="warning">
+            Seulement {{ questions.length }} questions disponibles sur {{ expectedAmount }} demandées.
+          </p>
+          <p [innerHTML]="questions[currentQuestionIndex].question"></p>
+          <div class="answers">
+            <button
+              *ngFor="let answer of questions[currentQuestionIndex].answers"
+              class="answer-btn"
+              [ngClass]="{
+                'correct': selectedAnswer === answer && answer === questions[currentQuestionIndex].correct_answer,
+                'wrong': selectedAnswer === answer && answer !== questions[currentQuestionIndex].correct_answer
+              }"
+              (click)="selectAnswer(answer)"
+              [disabled]="selectedAnswer"
+            >
+              {{ answer }}
+              <span class="feedback" *ngIf="selectedAnswer === answer">
+                <span *ngIf="answer === questions[currentQuestionIndex].correct_answer">✔️</span>
+                <span *ngIf="answer !== questions[currentQuestionIndex].correct_answer">❌</span>
+              </span>
+            </button>
+          </div>
+          <button class="next-btn" (click)="submitAnswer()" [disabled]="!selectedAnswer">Suivant</button>
+        </div>
+        <p *ngIf="!questions.length">Chargement des questions...</p>
+      </div>
+    </div>
   </div>
 </div>
