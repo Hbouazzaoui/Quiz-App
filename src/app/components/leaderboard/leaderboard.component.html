@@ -1,0 +1,41 @@
+<!-- src/app/components/leaderboard/leaderboard.component.html -->
+<app-navbar></app-navbar>
+<div class="section">
+  <div class="container">
+    <h2>Classement</h2>
+    <div class="tabs">
+      <button class="tab" [ngClass]="{'active': activeTab === 'all'}" (click)="activeTab = 'all'">Tout le temps</button>
+      <button class="tab" [ngClass]="{'active': activeTab === 'week'}" (click)="activeTab = 'week'">Cette semaine</button>
+      <button class="tab" [ngClass]="{'active': activeTab === 'month'}" (click)="activeTab = 'month'">Ce mois</button>
+    </div>
+    <div class="podium" *ngIf="activeTab === 'all'">
+      <div class="podium-item second">
+        <img src="assets/images/user2.png" alt="Second" class="avatar" />
+        <span class="rank">2</span>
+        <p>Maria C.</p>
+        <p>120,774</p>
+      </div>
+      <div class="podium-item first">
+        <img src="assets/images/user1.png" alt="First" class="avatar" />
+        <span class="rank">1</span>
+        <p>David James</p>
+        <p>145,093</p>
+        <span class="crown">👑</span>
+      </div>
+      <div class="podium-item third">
+        <img src="assets/images/user3.png" alt="Third" class="avatar" />
+        <span class="rank">3</span>
+        <p>Peter</p>
+        <p>95,876</p>
+      </div>
+    </div>
+    <div class="leaderboard-list">
+      <div class="leaderboard-item" *ngFor="let entry of leaderboardData[activeTab]; let i = index">
+        <span class="rank">{{ i + 4 }}</span>
+        <img src="assets/images/user{{ i + 4 }}.png" alt="User" class="avatar" />
+        <span class="name">{{ entry.name }}</span>
+        <span class="score">{{ entry.score }}</span>
+      </div>
+    </div>
+  </div>
+</div>

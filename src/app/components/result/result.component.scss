@@ -1,6 +1,30 @@
+// src/app/components/result/result.component.scss
 .section {
   background-color: #1a3c34;
   min-height: 100vh;
   padding: 2rem 0;
+}
+
+.result-card {
+  background-color: #2e2e2e;
+  padding: 2rem;
+  border-radius: 10px;
   color: white;
+  text-align: center;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+}
+
+.replay-btn {
+  background-color: #28b463;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #3cc77f;
+  }
 }

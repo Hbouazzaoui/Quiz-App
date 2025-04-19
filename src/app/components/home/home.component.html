@@ -2,38 +2,60 @@
 <app-navbar></app-navbar>
 <div class="section">
   <div class="container">
-    <div class="row justify-content-md-center">
-      <div class="col-md-6">
-        <div class="quiz-form">
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <span class="form-label">Difficulty</span>
-                <select class="form-control" [(ngModel)]="difficulty" name="difficulty">
-                  <option value="easy">Easy</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-12">
-              <div class="form-group">
-                <span class="form-label">Questions</span>
-                <select class="form-control" [(ngModel)]="questionCount" name="questionCount">
-                  <option value="5">5</option>
-                  <option value="10">10</option>
-                  <option value="15">15</option>
-                  <option value="20">20</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="form-btn">
-            <button class="submit-btn" (click)="startQuiz()">Start Quiz</button>
+    <div class="user-header">
+      <div class="user-info">
+        <h2>Salut, Utilisateur</h2>
+        <p>Faisons de cette journée un jour productif</p>
+      </div>
+      <div class="user-stats">
+        <div class="stat">
+          <span class="icon trophy">🏆</span>
+          <span class="label">Classement</span>
+          <span class="value">348</span>
+        </div>
+        <div class="stat">
+          <span class="icon coin">🪙</span>
+          <span class="label">Points</span>
+          <span class="value">1209</span>
+        </div>
+      </div>
+    </div>
+    <h3>Jouons</h3>
+    <div class="category-grid">
+      <div class="category-card" *ngFor="let cat of categories" (click)="selectCategory(cat.id)">
+        <img [src]="cat.image" [alt]="cat.name" class="category-icon" />
+        <h4>{{ cat.name }}</h4>
+        <p>{{ cat.questionCount }} questions</p>
+      </div>
+    </div>
+    <div class="quiz-form" *ngIf="selectedCategory">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <span class="form-label">Difficulté</span>
+            <select class="form-control" [(ngModel)]="difficulty" name="difficulty">
+              <option value="easy">Facile</option>
+              <option value="medium">Moyen</option>
+              <option value="hard">Difficile</option>
+            </select>
           </div>
         </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <span class="form-label">Nombre de questions</span>
+            <select class="form-control" [(ngModel)]="questionCount" name="questionCount">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="15">15</option>
+              <option value="20">20</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-btn">
+        <button class="submit-btn" (click)="startQuiz()">Commencer le Quiz</button>
       </div>
     </div>
   </div>

@@ -1,10 +1,10 @@
 .navbar {
-  background-color: #1a3c34;
+  background-color: #212121;
   padding: 1rem 0;
 
   .navbar-brand {
     font-size: 1.5rem;
-    color: #28b463;
+    color: #f5a623;
   }
 
   .nav-link {
@@ -12,7 +12,7 @@
     margin-left: 1rem;
 
     &:hover {
-      color: #28b463;
+      color: #f5a623;
     }
   }
 }
