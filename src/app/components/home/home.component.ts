@@ -21,37 +21,43 @@ export class HomeComponent implements OnInit {
       id: '21',
       name: 'Sports',
       questionCount: 95,
-      image: 'assets/images/sports.png',
+      image:
+        'https://www.pngarts.com/files/5/Sports-Activities-PNG-Image-Transparent-Background.png',
     },
     {
       id: '17',
       name: 'Chimie',
       questionCount: 30,
-      image: 'assets/images/chemistry.png',
+      image:
+        'https://thumbs.dreamstime.com/b/illustration-du-mod%C3%A8le-vectoriel-de-logo-chimie-261394613.jpg',
     },
     {
       id: '19',
       name: 'Mathématiques',
       questionCount: 95,
-      image: 'assets/images/math.png',
+      image:
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS45dU-Bi9dEu0SWBfhWBZJX40fwCzM1dCjMWfy-zajfe_vXoMW41MO7nkCbHX1OQPCTVk&usqp=CAU',
     },
     {
       id: '23',
       name: 'Histoire',
       questionCount: 121,
-      image: 'assets/images/history.png',
+      image:
+        'https://images.seeklogo.com/logo-png/22/2/the-history-channel-logo-png_seeklogo-222414.png',
     },
     {
       id: '27',
       name: 'Biologie',
       questionCount: 50,
-      image: 'assets/images/biological.png',
+      image:
+        'https://img.freepik.com/vecteurs-libre/objets-laboratoire-scientifique_23-2148488312.jpg?semt=ais_hybrid&w=740',
     },
     {
       id: '22',
       name: 'Géographie',
       questionCount: 80,
-      image: 'assets/images/geography.png',
+      image:
+        'https://i.pinimg.com/236x/e1/eb/68/e1eb685cc88e668ea15ea46fca468fdc.jpg',
     },
   ];
 

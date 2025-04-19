@@ -4,13 +4,13 @@
   <div class="container">
     <div class="user-header">
       <div class="user-info">
-        <h2>Salut, Utilisateur</h2>
-        <p>Faisons de cette journée un jour productif</p>
+        <h2>Hello, User </h2>
+        <p>Let's make this day a productive day</p>
       </div>
       <div class="user-stats">
         <div class="stat">
           <span class="icon trophy">🏆</span>
-          <span class="label">Classement</span>
+          <span class="label">Ranking</span>
           <span class="value">348</span>
         </div>
         <div class="stat">
@@ -32,11 +32,11 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
-            <span class="form-label">Difficulté</span>
+            <span class="form-label">Difficulty</span>
             <select class="form-control" [(ngModel)]="difficulty" name="difficulty">
-              <option value="easy">Facile</option>
-              <option value="medium">Moyen</option>
-              <option value="hard">Difficile</option>
+              <option value="easy">Easy</option>
+              <option value="medium">Medium</option>
+              <option value="hard">Hard</option>
             </select>
           </div>
         </div>
@@ -44,7 +44,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="form-group">
-            <span class="form-label">Nombre de questions</span>
+            <span class="form-label">Number of Questions</span>
             <select class="form-control" [(ngModel)]="questionCount" name="questionCount">
               <option value="5">5</option>
               <option value="10">10</option>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <div class="form-btn">
-        <button class="submit-btn" (click)="startQuiz()">Commencer le Quiz</button>
+        <button class="submit-btn" (click)="startQuiz()">Start the Quiz</button>
       </div>
     </div>
   </div>
