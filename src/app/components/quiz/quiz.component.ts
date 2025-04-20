@@ -3,6 +3,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { QuizService } from '../../services/quiz.service';
+import { StorageService } from '../../services/storage.service'; // Import StorageService
 import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
@@ -19,12 +20,13 @@ export class QuizComponent implements OnInit, OnDestroy {
   selectedAnswer: string | null = null;
   timer = 30;
   timerInterval: any;
-  expectedAmount = 10; // Store the requested amount
+  expectedAmount = 10;
 
   constructor(
     private quizService: QuizService,
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private storageService: StorageService // Inject StorageService
   ) {}
 
   ngOnInit() {
@@ -32,19 +34,16 @@ export class QuizComponent implements OnInit, OnDestroy {
       const category = params['category'] || '';
       const difficulty = params['difficulty'] || 'easy';
       const amount = parseInt(params['amount'] || '10', 10);
-      this.expectedAmount = amount; // Store the requested amount
-      console.log('Amount:', amount);
+      this.expectedAmount = amount;
       this.quizService
         .getQuestions(category, difficulty, amount.toString())
         .subscribe((data) => {
-          console.log('API Response:', data);
           this.questions = data.results.map((q: any) => ({
             ...q,
             answers: [...q.incorrect_answers, q.correct_answer].sort(
               () => Math.random() - 0.5
             ),
           }));
-          console.log('Number of Questions:', this.questions.length);
           this.startTimer();
         });
     });
@@ -75,6 +74,8 @@ export class QuizComponent implements OnInit, OnDestroy {
     this.currentQuestionIndex++;
     this.selectedAnswer = null;
     if (this.currentQuestionIndex >= this.questions.length) {
+      // Save score to history before navigating
+      this.storageService.addHistoryEntry(this.score);
       this.router.navigate(['/result'], { queryParams: { score: this.score } });
     } else {
       this.startTimer();

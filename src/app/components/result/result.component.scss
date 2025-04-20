@@ -1,30 +1,41 @@
 // src/app/components/result/result.component.scss
 .section {
-  background-color: #1a3c34;
-  min-height: 100vh;
+  background: linear-gradient(to bottom, #1a3c34, #212121); // Matches your app's gradient
+  min-height: 100vh; // Full viewport height
   padding: 2rem 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; // Center content vertically
 }
 
-.result-card {
-  background-color: #2e2e2e;
-  padding: 2rem;
-  border-radius: 10px;
-  color: white;
+h2 {
+  font-size: 1.5rem;
   text-align: center;
-
-  h2 {
-    margin-bottom: 1rem;
-  }
+  margin-bottom: 1rem;
 }
 
-.replay-btn {
-  background-color: #28b463;
+.score {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #f5a623; // Orange accent for the score
+  background-color: #333; // Dark card background
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.home-btn {
+  background-color: #00c4b4; // Cyan button
   color: white;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
 
   &:hover {
-    background-color: #3cc77f;
+    background-color: #00a99d; // Darker cyan on hover
   }
 }

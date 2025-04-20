@@ -1,6 +1,50 @@
+// src/app/components/history/history.component.scss
 .section {
-  background-color: #1a3c34;
+  background: linear-gradient(to bottom, #1a3c34, #212121);
   min-height: 100vh;
   padding: 2rem 0;
   color: white;
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.history-list {
+  .history-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+
+    .date {
+      flex: 1;
+      color: white;
+    }
+
+    .score {
+      font-weight: bold;
+      color: #f5a623; // Orange accent for scores
+    }
+  }
+}
+
+.clear-btn {
+  background-color: #00c4b4; // Cyan button
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  display: block;
+  margin: 1rem auto;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #00a99d; // Darker cyan on hover
+  }
 }

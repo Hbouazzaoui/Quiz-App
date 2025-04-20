@@ -2,6 +2,14 @@
 <div class="section">
   <div class="container">
     <h2>Score History</h2>
-    <p>Past scores will show here!</p>
+    <div class="history-list">
+      <div class="history-item" *ngFor="let entry of historyData">
+        <span class="date">{{ entry.date }}</span>
+        <span class="score">{{ entry.score }}</span>
+      </div>
+      <p *ngIf="!historyData.length">Aucun score enregistré.</p>
+    </div>
+    <button class="clear-btn" (click)="clearHistory()">Clear History</button>
   </div>
 </div>
+

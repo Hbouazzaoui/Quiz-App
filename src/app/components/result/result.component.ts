@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NavbarComponent } from '../navbar/navbar.component';
+import { FooterComponent } from '../footer/footer.component';
+
 
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [NavbarComponent],
+  imports: [NavbarComponent ,FooterComponent],
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss'],
 })
@@ -21,4 +23,8 @@ export class ResultComponent {
   replay() {
     this.router.navigate(['/']);
   }
+  goHome() {
+    this.router.navigate(['/']);
+  }
 }
+
